@@ -1,13 +1,33 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { useEffect, useRef } from "react";
+import { StyleSheet, Text, View, Image, Animated } from "react-native";
 
-export function ProductCard({ title, image, price, description }) {
+export function ProductCard({ product }) {
   return (
-    <View style={styles.card}>
-      <Image source={{ uri: image }} style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.price}>${price}</Text>
-      <Text style={styles.description}>{description}</Text>
+    <View key={product.id} style={styles.card}>
+      <Image source={{ uri: product.image }} style={styles.image} />
+      <Text style={styles.title}>{product.title}</Text>
+      <Text style={styles.price}>${product.price}</Text>
+      <Text style={styles.description}>{product.description}</Text>
     </View>
+  );
+}
+
+export function AnimatedProductCard({ product, index }) {
+  const opacity = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 500,
+      delay: index * 500,
+      useNativeDriver: true,
+    }).start();
+  }, [opacity, index]);
+
+  return (
+    <Animated.View style={{ opacity }}>
+      <ProductCard product={product} />
+    </Animated.View>
   );
 }
 

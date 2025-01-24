@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, ScrollView, ActivityIndicator } from "react-native";
+import { FlatList, View, ActivityIndicator } from "react-native";
 import { getProducts } from "../lib/metacritic";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ProductCard } from "./ProductCard";
+import { AnimatedProductCard } from "./ProductCard";
 import { Logo } from "./Logo";
 
 export function Main() {
@@ -25,8 +25,10 @@ export function Main() {
       ) : (
         <FlatList
           data={products}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <ProductCard {...item} />}
+          keyExtractor={(product) => product.id}
+          renderItem={({ item, index }) => (
+            <AnimatedProductCard product={item} index={index} />
+          )}
         />
       )}
     </View>
