@@ -6,4 +6,11 @@ module.exports = {
     "prettier/prettier": ["error"],
   },
   ignorePatterns: ["/dist/*"],
+  overrides: [
+    files: ["*.js", "*.jsx"],
+    rules: {
+      "no-unused-vars": "off",
+      "react/prop-types": "off",
+    },
+  ]
 };
