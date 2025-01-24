@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { FlatList, View, ScrollView, ActivityIndicator } from "react-native";
 import { getProducts } from "../lib/metacritic";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { ProductCard } from "./ProductCard";
+import { Logo } from "./Logo";
 
 export function Main() {
   const [products, setProducts] = useState([]);
@@ -15,43 +17,18 @@ export function Main() {
 
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <ScrollView>
-        {products.map((item) => (
-          <View key={item.id} style={styles.card}>
-            <Image source={item.image} style={styles.image} />
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.price}>${item.price}</Text>
-            <Text style={styles.description}>{item.description}</Text>
-          </View>
-        ))}
-      </ScrollView>
+      <View style={{ marginBlock: 12 }}>
+        <Logo />
+      </View>
+      {products.length === 0 ? (
+        <ActivityIndicator size="large" color="#fff" />
+      ) : (
+        <FlatList
+          data={products}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <ProductCard {...item} />}
+        />
+      )}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  card: {
-    marginBottom: 42,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#fff",
-    marginTop: 10,
-  },
-  price: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "green",
-  },
-  description: {
-    fontSize: 16,
-    color: "#eee",
-  },
-  image: {
-    width: 120,
-    height: 150,
-    borderRadius: 10,
-    objectFit: "cover",
-  },
-});
