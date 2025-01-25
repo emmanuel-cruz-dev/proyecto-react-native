@@ -3,11 +3,20 @@ import { StyleSheet, Text, View, Image, Animated } from "react-native";
 
 export function ProductCard({ product }) {
   return (
-    <View key={product.id} style={styles.card}>
+    <View
+      key={product.id}
+      className="flex-row bg-slate-500/10 p-4 rounded-xl gap-4 mb-10"
+    >
       <Image source={{ uri: product.image }} style={styles.image} />
-      <Text style={styles.title}>{product.title}</Text>
-      <Text style={styles.price}>${product.price}</Text>
-      <Text style={styles.description}>{product.description}</Text>
+      <View>
+        <Text className="mb-1" style={styles.title}>
+          {product.title}
+        </Text>
+        <Text style={styles.price}>${product.price}</Text>
+        <Text className="mt-2 flex-shrink" style={styles.description}>
+          {product.description.slice(0, 100)}
+        </Text>
+      </View>
     </View>
   );
 }
