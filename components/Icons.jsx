@@ -10,3 +10,9 @@ export const CircleInfoIcon = (props) => {
     <FontAwesome6 name="circle-info" size={24} color="#60a5fa" {...props} />
   );
 };
+
+export const InfoIcon = (props) => {
+  return (
+    <FontAwesome name="info-circle" size={24} color="#60a5fa" {...props} />
+  );
+};
