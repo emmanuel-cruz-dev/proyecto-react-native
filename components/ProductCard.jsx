@@ -20,7 +20,7 @@ export function ProductCard({ product }) {
       <StyledPressable className="active:opacity-70 border border-black active:border-white/50 mb-2 bg-gray-500/10 rounded-xl p-4">
         <View key={product.id} className="flex-row gap-4">
           <Image source={{ uri: product.image }} style={styles.image} />
-          <View>
+          <View className="flex-shrink">
             <Text className="mb-1" style={styles.title}>
               {product.title}
             </Text>
