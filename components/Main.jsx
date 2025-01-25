@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "expo-router";
 import { FlatList, View, ActivityIndicator } from "react-native";
 import { getProducts } from "../lib/metacritic";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -20,6 +21,9 @@ export function Main() {
       <View style={{ marginBlock: 12 }}>
         <Logo />
       </View>
+      <Link href="/about" className="text-xl text-blue-400">
+        Ir al about
+      </Link>
       {products.length === 0 ? (
         <ActivityIndicator size="large" color="#fff" />
       ) : (
