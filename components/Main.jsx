@@ -25,11 +25,8 @@ export function Main() {
   }, []);
 
   return (
-    <View
-      className="bg-black"
-      style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
-    >
-      <View className="flex-row justify-between items-center my-4 mx-2">
+    <View className="bg-black">
+      {/* <View className="flex-row justify-between items-center my-4 mx-2">
         <View>
           <Logo />
         </View>
@@ -39,7 +36,7 @@ export function Main() {
             <Text className="text-xl text-blue-400">Ir al about</Text>
           </Pressable>
         </Link>
-      </View>
+      </View> */}
 
       {products.length === 0 ? (
         <ActivityIndicator size="large" color="#fff" />
