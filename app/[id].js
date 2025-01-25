@@ -5,6 +5,7 @@ import { Screen } from "../components/Screen";
 import { useEffect, useState } from "react";
 import { getProductDetails } from "../lib/metacritic";
 import { ScrollView } from "react-native";
+import { Price } from "../components/Price";
 
 export default function Detail() {
   const { id } = useLocalSearchParams();
@@ -38,13 +39,13 @@ export default function Detail() {
                 source={{ uri: productInfo.image }}
                 style={{ width: 240, height: 320, objectFit: "scale-down" }}
               />
-              <Text className="text-white font-bold mb-8 text-2xl">
+              <View className="flex-row justify-center mb-2">
+                <Price price={productInfo.price} maxPrice={100} />
+              </View>
+              <Text className="text-white font-bold text-2xl text-center">
                 {productInfo.title}
               </Text>
-              <Text className="text-white text-white/90 mb-4 text-2xl">
-                ${productInfo.price}
-              </Text>
-              <Text className="text-white text-white/90 mb-4">
+              <Text className="text-white/70 mb-4 text-base my-4">
                 {productInfo.description}
               </Text>
             </View>
