@@ -5,7 +5,7 @@ import { Logo } from "../components/Logo";
 
 export default function Layout() {
   return (
-    <View className="flex-1">
+    <View className="flex-1 bg-black">
       <Stack
         screenOptions={{
           headerStyle: { backgroundColor: "#000" },

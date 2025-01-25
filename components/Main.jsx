@@ -10,6 +10,7 @@ import {
 import { getProducts } from "../lib/metacritic";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedProductCard } from "./ProductCard";
+import { Screen } from "./Screen";
 import { Logo } from "./Logo";
 
 import { CircleInfoIcon } from "./Icons";
@@ -25,19 +26,7 @@ export function Main() {
   }, []);
 
   return (
-    <View className="bg-black">
-      {/* <View className="flex-row justify-between items-center my-4 mx-2">
-        <View>
-          <Logo />
-        </View>
-        <Link asChild href="/about">
-          <Pressable className="flex-row items-center gap-2 my-2">
-            <CircleInfoIcon />
-            <Text className="text-xl text-blue-400">Ir al about</Text>
-          </Pressable>
-        </Link>
-      </View> */}
-
+    <Screen>
       {products.length === 0 ? (
         <ActivityIndicator size="large" color="#fff" />
       ) : (
@@ -49,6 +38,6 @@ export function Main() {
           )}
         />
       )}
-    </View>
+    </Screen>
   );
 }
