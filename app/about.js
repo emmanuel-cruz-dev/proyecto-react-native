@@ -1,8 +1,12 @@
 import { ScrollView, Text } from "react-native";
+import { Link } from "expo-router";
 
 export default function About() {
   return (
     <ScrollView>
+      <Link href="/" className="text-xl text-blue-400 mt-12">
+        Ir al inicio
+      </Link>
       <Text className="text-white mb-8 text-2xl font-bold">
         Sobre el Proyecto
       </Text>
