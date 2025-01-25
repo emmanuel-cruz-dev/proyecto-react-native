@@ -49,7 +49,10 @@ export default function Detail() {
                 {productInfo.description}
               </Text>
             </View>
-            <Link href="/" className="text-blue-400">
+            <Link
+              href="/"
+              className="text-blue-400 text-lg border border-blue-400  w-1/3 rounded-full px-4 py-2 mt-8"
+            >
               Volver atrás
             </Link>
           </ScrollView>
