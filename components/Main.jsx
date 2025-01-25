@@ -12,7 +12,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedProductCard } from "./ProductCard";
 import { Logo } from "./Logo";
 
-import FontAwesome from "@expo/vector-icons/FontAwesome6";
+import { CircleInfoIcon } from "./Icons";
 
 export function Main() {
   const [products, setProducts] = useState([]);
@@ -31,7 +31,7 @@ export function Main() {
       </View>
       <Link asChild href="/about">
         <Pressable className="flex-row items-center gap-2 my-2">
-          <FontAwesome name="circle-info" size={24} color="#60a5fa" />
+          <CircleInfoIcon />
           <Text className="text-xl text-blue-400">Ir al about</Text>
         </Pressable>
       </Link>
