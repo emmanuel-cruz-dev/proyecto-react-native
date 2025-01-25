@@ -9,14 +9,14 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: () => <HomeIcon />,
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
         }}
       />
       <Tabs.Screen
         name="about"
         options={{
           title: "About",
-          tabBarIcon: () => <InfoIcon />,
+          tabBarIcon: ({ color }) => <InfoIcon color={color} />,
         }}
       />
     </Tabs>
