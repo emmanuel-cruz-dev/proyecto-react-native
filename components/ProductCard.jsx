@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { StyleSheet, Text, View, Image, Animated } from "react-native";
+import { Price } from "./Price";
 
 export function ProductCard({ product }) {
   return (
@@ -12,7 +13,7 @@ export function ProductCard({ product }) {
         <Text className="mb-1" style={styles.title}>
           {product.title}
         </Text>
-        <Text style={styles.price}>${product.price}</Text>
+        <Price price={product.price} maxPrice={100} />
         <Text className="mt-2 flex-shrink" style={styles.description}>
           {product.description.slice(0, 100)}
         </Text>
