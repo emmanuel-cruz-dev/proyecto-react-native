@@ -25,16 +25,22 @@ export function Main() {
   }, []);
 
   return (
-    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <View style={{ marginBlock: 12 }}>
-        <Logo />
+    <View
+      className="bg-black"
+      style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
+    >
+      <View className="flex-row justify-between items-center my-4 mx-2">
+        <View>
+          <Logo />
+        </View>
+        <Link asChild href="/about">
+          <Pressable className="flex-row items-center gap-2 my-2">
+            <CircleInfoIcon />
+            <Text className="text-xl text-blue-400">Ir al about</Text>
+          </Pressable>
+        </Link>
       </View>
-      <Link asChild href="/about">
-        <Pressable className="flex-row items-center gap-2 my-2">
-          <CircleInfoIcon />
-          <Text className="text-xl text-blue-400">Ir al about</Text>
-        </Pressable>
-      </Link>
+
       {products.length === 0 ? (
         <ActivityIndicator size="large" color="#fff" />
       ) : (
