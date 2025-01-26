@@ -4,7 +4,13 @@ import { HomeIcon, InfoIcon } from "../../components/Icons";
 
 export default function TabsLayout() {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: { backgroundColor: "#000" },
+        tabBarActiveTintColor: "yellow",
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
