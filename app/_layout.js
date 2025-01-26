@@ -12,14 +12,14 @@ export default function Layout() {
           headerTintColor: "yellow",
           headerTitle: "",
           headerLeft: () => <Logo />,
-          headerRight: () => (
-            <Link asChild href="/about">
-              <Pressable className="flex-row items-center gap-2 my-2">
-                <CircleInfoIcon />
-                <Text className="text-xl text-blue-400">Ir al about</Text>
-              </Pressable>
-            </Link>
-          ),
+          //headerRight: () => (
+          // <Link asChild href="/about">
+          //   <Pressable className="flex-row items-center gap-2 my-2">
+          //     <CircleInfoIcon />
+          //     <Text className="text-xl text-blue-400">Ir al about</Text>
+          //   </Pressable>
+          // </Link>
+          //),
         }}
       />
     </View>
