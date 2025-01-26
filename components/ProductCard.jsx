@@ -21,8 +21,8 @@ export function ProductCard({ product }) {
         <View key={product.id} className="flex-row gap-4">
           <Image source={{ uri: product.image }} style={styles.image} />
           <View className="flex-shrink">
-            <Text className="mb-1" style={styles.title}>
-              {product.title}
+            <Text className="mb-2" style={styles.title}>
+              {product.title.slice(0, 40)}
             </Text>
             <Price price={product.price} maxPrice={100} />
             <Text className="mt-2 flex-shrink" style={styles.description}>
@@ -60,15 +60,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 120,
-    height: 150,
+    height: 160,
     borderRadius: 10,
-    objectFit: "cover",
+    // objectFit: "scale-down",
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
     color: "#fff",
-    marginTop: 10,
   },
   price: {
     fontSize: 18,

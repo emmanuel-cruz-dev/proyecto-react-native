@@ -11,7 +11,7 @@ export function Price({ price, maxPrice }) {
   const className = getColor();
   return (
     <View
-      className={`${className} w-1/3 rounded-full justify-center items-center`}
+      className={`${className} self-start px-4 rounded-full justify-center items-center`}
     >
       <Text className="text-white text-lg font-bold">${price}</Text>
     </View>
